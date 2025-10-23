@@ -7,8 +7,8 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # ========== 页面配置 ==========
-st.set_page_config(page_title="Pervious Concrete Permeability Prediction",
-                   page_icon="💧",
+st.set_page_config(page_title="PVA纤维混凝土韧性预测",
+                   page_icon="",
                    layout="wide")
 
 # ========== 自定义CSS美化 ==========
@@ -51,8 +51,8 @@ div[data-testid="stNumberInput"] > label {
 """, unsafe_allow_html=True)
 
 # ========== 标题 ==========
-st.markdown("<h1 style='text-align:center;'>💧 Pervious Concrete Permeability Prediction System</h1>", unsafe_allow_html=True)
-st.markdown("<h4 style='text-align:center; color:#1E88E5;'>Enter the following parameters to predict the Permeability Coefficient (PEC)</h4>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align:center;'>PVA纤维混凝土韧性预测平台</h1>", unsafe_allow_html=True)
+st.markdown("<h4 style='text-align:center; color:#1E88E5;'>输入对应参数预测PVA纤维混凝土韧性</h4>", unsafe_allow_html=True)
 st.markdown("---")
 
 # ========== 模型路径 ==========
@@ -103,7 +103,7 @@ else:
 
     # ========== 预测按钮 ==========
     st.markdown("<div style='text-align:center;'>", unsafe_allow_html=True)
-    predict_button = st.button("🔍 Predict PEC")
+    predict_button = st.button("🔍 Predict")
     st.markdown("</div>", unsafe_allow_html=True)
 
     # ========== 执行预测 ==========
@@ -120,8 +120,8 @@ else:
             # 显示预测结果
             st.markdown(f"""
             <div class="result-card">
-                <h2>✅ Predicted Permeability Coefficient (PEC)</h2>
-                <h1 style="color:#0D47A1;">{prediction:.6f} mm/s</h1>
+                <h2>✅ 预测韧性</h2>
+                <h1 style="color:#0D47A1;">{prediction:.6f}</h1>
             </div>
             """, unsafe_allow_html=True)
 
@@ -146,4 +146,5 @@ else:
 
         except Exception as e:
             st.error(f"⚠️ Prediction failed: {e}")
+
 
